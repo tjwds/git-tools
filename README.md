@@ -27,3 +27,13 @@ npm-cli  latest
      4	bbfc75d8 chore: fix weird .gitignore thing that happened somehow
      5	8a2d375d docs: changelog for v7.0.0
 ```
+
+### git-stick
+
+So I have a bunch of unstaged changes, and I want to stick all of them on a commit three commits ago.  Just invoke:
+
+`git stick 3`
+
+And it will 'just work.'
+
+This just stashes the changes, enters an interactive rebase, amends the commit you've targeted _without editing it_, and ends the rebase.
