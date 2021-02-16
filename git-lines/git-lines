@@ -1,1 +1,1 @@
-git log --oneline -n $1 | cat -n
+git log --oneline -n ${1:-10} | cat -n
