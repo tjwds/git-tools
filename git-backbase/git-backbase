@@ -1,5 +1,8 @@
+git config --global submodule.recurse false
 # I fully admit that I borrow every 'sed' invocation from someone else.
 # https://stackoverflow.com/questions/19936071/bash-get-first-word-last-line
 COMMIT_HASH=$(git log --oneline -n $1 | sed -n '$s/^\([^ ]*\).*$/\1/p') &&
 # https://stackoverflow.com/questions/12394166/how-do-i-run-git-rebase-interactive-in-non-interactive-manner
 GIT_SEQUENCE_EDITOR="sed -i -re 's/^pick $COMMIT_HASH /e $COMMIT_HASH /'" git rebase -i HEAD~$1
+# sorry if this wasn't already your default!
+git config --global submodule.recurse true
