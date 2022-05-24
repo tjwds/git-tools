@@ -1,3 +1,2 @@
-# https://stackoverflow.com/questions/19936071/bash-get-first-word-last-line
-COMMIT_HASH=$(git log --oneline -n ${1:-2} | sed -n '$s/^\([^ ]*\).*$/\1/p') &&
+COMMIT_HASH=$(git log --format=%H -n ${1:-2} | tail -n 1) &&
 git checkout $COMMIT_HASH
