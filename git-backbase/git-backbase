@@ -1,5 +1,5 @@
 git config --global submodule.recurse false
-COMMIT_HASH=$(git log --format=%H -n $1 | tail -n 1) &&
+COMMIT_HASH=$(git log --format=%h -n $1 | tail -n 1) &&
 # https://stackoverflow.com/questions/12394166/how-do-i-run-git-rebase-interactive-in-non-interactive-manner
 GIT_SEQUENCE_EDITOR="sed -i -re 's/^pick $COMMIT_HASH /e $COMMIT_HASH /'" git rebase -i HEAD~$1
 # sorry if this wasn't already your default!
