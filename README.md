@@ -37,3 +37,15 @@ So I have a bunch of unstaged changes, and I want to stick all of them on a comm
 And it will 'just work.'
 
 This just stashes the changes, enters an interactive rebase, amends the commit you've targeted _without editing it_, and ends the rebase.
+
+### git-to
+
+This is an alias for a command I use pretty often:
+
+`git checkout $(git branch | fzf)`
+
+This helps me search for a branch when I don't have the exact name in front of me and immediately check it out.
+
+![Screenshot of a terminal displaying two git branches:  main, and "hi this is another branch."](./assets/git-to.png)
+
+You'll need to have [fzf](https://junegunn.github.io/fzf/) installed.
